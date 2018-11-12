@@ -24,5 +24,10 @@ namespace EksamensS3MBJ.GUI
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

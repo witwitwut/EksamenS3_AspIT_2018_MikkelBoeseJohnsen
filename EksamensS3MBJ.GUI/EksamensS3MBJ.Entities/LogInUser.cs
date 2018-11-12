@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensS3MBJ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,20 @@ namespace EksamensS3MBJ.Entities
 {
     public class LogInUser : GrainBarrelNotify
     {
-        User user;
         private int loginid;
         private string cprnr;
         private string password;
+        private int userId;
 
-        public LogInUser(User user, int loginid, string cprnr, string password)
+
+
+
+        public LogInUser(int loginid, string cprnr, string password, int userid)
         {                
             Password = password;
             CPRNR = cprnr;
-            LogInId = loginid;           
-
+            LogInId = loginid;
+            UserId = userid;
         }
 
         public string Password
@@ -59,6 +63,18 @@ namespace EksamensS3MBJ.Entities
                     loginid = value;
                     Notify("loginid");
                 }
+            }
+        }
+        public int UserId
+        {
+            get { return userId; }
+            set
+            {
+                if (value != userId)
+                {
+                    userId = value;
+                    Notify("userId");
+                }                
             }
         }
 

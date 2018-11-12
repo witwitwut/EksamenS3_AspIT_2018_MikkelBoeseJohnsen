@@ -47,7 +47,7 @@
                 Height="44"
                 Margin="344,326,0,0"
                 VerticalAlignment="Top"
-                Width="130" />
+                Width="130" Click="Button_Click" />
         <Label x:Name="labelWrongPW" 
                Content="Wrong Username or Password - please try again"
                HorizontalAlignment="Left"
