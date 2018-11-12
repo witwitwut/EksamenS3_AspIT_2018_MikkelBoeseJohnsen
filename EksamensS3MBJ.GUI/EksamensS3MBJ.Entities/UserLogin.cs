@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EksamensS3MBJ.Entities
 {
-    public class Class1
+    class UserLogin
     {
     }
 }
