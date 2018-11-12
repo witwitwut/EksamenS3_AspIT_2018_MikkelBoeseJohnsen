@@ -94,5 +94,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EksamensS3MBJ.Biz\EksamensS3MBJ.Biz.csproj">
+      <Project>{bc7aac9c-7cfa-4973-bf38-1084dde8981e}</Project>
+      <Name>EksamensS3MBJ.Biz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EksamensS3MBJ.Entities\EksamensS3MBJ.Entities.csproj">
+      <Project>{69e414ed-fd90-4518-aad7-11bd254be037}</Project>
+      <Name>EksamensS3MBJ.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

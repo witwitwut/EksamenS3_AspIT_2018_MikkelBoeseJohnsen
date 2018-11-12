@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EksamensS3MBJ.IO
+namespace EksamensS3MBJ.Biz
 {
     public class Class1
     {
