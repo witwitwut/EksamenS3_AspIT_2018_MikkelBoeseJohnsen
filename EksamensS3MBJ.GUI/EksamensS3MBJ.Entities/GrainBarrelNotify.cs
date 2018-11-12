@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace EksamensS3MBJ.Entities
 {
-    public class Notify : INotifyPropertyChanged
+    public class GrainBarrelNotify : INotifyPropertyChanged
     {
-        public Notify(string propertyName)
+
+        public void Notify(string propertyName)
         {
             if (this.PropertyChanged != null)
             {
