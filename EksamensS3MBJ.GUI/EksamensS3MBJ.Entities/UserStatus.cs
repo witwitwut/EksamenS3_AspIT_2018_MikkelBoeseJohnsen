@@ -16,7 +16,6 @@ namespace EksamensS3MBJ.Entities
             Status = status;
             Id = id;
         }
-
         public string Status
         {
             get { return status; }
@@ -29,8 +28,6 @@ namespace EksamensS3MBJ.Entities
                 }
             }
         }
-
-
         public int Id
         {
             get { return id; }
@@ -43,6 +40,5 @@ namespace EksamensS3MBJ.Entities
                 }
             }
         }
-
     }
 }

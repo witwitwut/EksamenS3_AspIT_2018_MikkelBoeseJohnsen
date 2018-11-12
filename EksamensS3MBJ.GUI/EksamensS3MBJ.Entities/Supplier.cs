@@ -19,7 +19,14 @@ namespace EksamensS3MBJ.Entities
         public string ZipCity
         {
             get { return zipcity; }
-            set { zipcity = value; }
+            set
+            {
+                if (value != zipcity)
+                {
+                    zipcity = value;
+                    Notify("zipcity");
+                }
+            }
         }
 
 
@@ -105,7 +112,5 @@ namespace EksamensS3MBJ.Entities
                 }
             }
         }
-
-
     }
 }
