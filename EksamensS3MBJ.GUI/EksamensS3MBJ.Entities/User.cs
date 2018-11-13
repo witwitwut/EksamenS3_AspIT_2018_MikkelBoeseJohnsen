@@ -13,6 +13,11 @@ namespace EksamensS3MBJ.Entities
         private UserStatus status;
         private string phonenr;
         private Country country;
+        
+        public User()
+        {
+
+        }
 
         public User(int userId, string name, UserStatus status, string phoneNr, Country country)
         {

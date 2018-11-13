@@ -16,6 +16,10 @@ namespace EksamensS3MBJ.Entities
             Status = status;
             Id = id;
         }
+        public UserStatus()
+        {
+
+        }
         public string Status
         {
             get { return status; }

@@ -14,7 +14,10 @@ namespace EksamensS3MBJ.Entities
         private string password;
         private int userId;
 
+        public LogInUser()
+        {
 
+        }
 
 
         public LogInUser(int loginid, string cprnr, string password, int userid)

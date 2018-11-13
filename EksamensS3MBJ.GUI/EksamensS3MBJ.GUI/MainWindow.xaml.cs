@@ -23,6 +23,7 @@ namespace EksamensS3MBJ.GUI
         public MainWindow()
         {
             InitializeComponent();
+            LogIn logIn = new LogIn(MainGrid);
         }
     }
 }

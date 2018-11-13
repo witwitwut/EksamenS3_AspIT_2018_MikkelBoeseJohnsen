@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EksamensS3MBJ.GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid x:Name="MainGrid">
         
     </Grid>
 </Window>

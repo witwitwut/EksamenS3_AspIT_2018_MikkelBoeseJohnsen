@@ -20,9 +20,11 @@ namespace EksamensS3MBJ.GUI
     /// </summary>
     public partial class GrainSupplierAdm : UserControl
     {
-        public GrainSupplierAdm()
+        Grid gridMain;
+        public GrainSupplierAdm(Grid grid)
         {
             InitializeComponent();
+            gridMain = grid;
         }
     }
 }

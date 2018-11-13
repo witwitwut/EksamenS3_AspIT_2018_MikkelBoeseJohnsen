@@ -38,7 +38,7 @@ namespace EksamensS3MBJ.Entities
                 if (value != directemail)
                 {
                     directemail = value;
-                    Notify("mobilnr");
+                    Notify("directemal");
                 }
 
             }
@@ -52,7 +52,7 @@ namespace EksamensS3MBJ.Entities
             {
                 if (value != directphone)
                 {
-                    mobilnr = value;
+                    directphone = value;
                     Notify("directphone");
                 }
 
