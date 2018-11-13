@@ -10,22 +10,22 @@ namespace EksamensS3MBJ.Entities
     {
         private int userid;
         private string name;
-        private UserStatus status;
+        private int statusid;
         private string phonenr;
-        private Country country;
+        private int countryid;
         
         public User()
         {
-
+            UserId = 0;
         }
 
-        public User(int userId, string name, UserStatus status, string phoneNr, Country country)
+        public User(int userId, string name, int statusid, string phoneNr, int countryid)
         {
             UserId = userId;
             Name = name;
-            Status = status;
+            StatusId = statusid;
             PhoneNr = phoneNr;
-            Country = country;
+            CountryId = countryid;
         }
 
         public int UserId
@@ -52,14 +52,14 @@ namespace EksamensS3MBJ.Entities
                 }
             }
         }
-        public UserStatus Status
+        public int StatusId
         {
-            get { return status; }
+            get { return statusid; }
             set
             {
-                if (value != status)
+                if (value != statusid)
                 {
-                    status = value;
+                    statusid = value;
                     Notify("status");
                 }
             }
@@ -76,14 +76,14 @@ namespace EksamensS3MBJ.Entities
                 }
             }
         }
-        public Country Country
+        public int CountryId
         {
-            get { return country; }
+            get { return countryid; }
             set
             {
-                if (value != country)
+                if (value != countryid)
                 {
-                    country = value;
+                    countryid = value;
                     Notify("country");
                 }
             }

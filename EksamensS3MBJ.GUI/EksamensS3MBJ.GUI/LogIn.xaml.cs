@@ -34,41 +34,48 @@ namespace EksamensS3MBJ.GUI
             ClassBiz biz = new ClassBiz();
             User LUser = new User();
             UserStatus userStatus = new UserStatus();
+            bool Checklogin = false;
             try
             {
-                LUser = biz.UseVerifyUser(user.Text, pw.Text);
-                try
+                labelWrongPW.Visibility = Visibility.Hidden;
+                while (Checklogin == false)
                 {
-                    userStatus = biz.UseGetUserStatus(LUser.Status.Id);
-                }
-                catch (Exception exe)
-                {
+                    LUser = biz.UseVerifyUser(user.Text, pw.Text);
 
-                    throw exe;
+                    if (LUser.UserId != 0)
+                    {
+                        userStatus = biz.UseGetUserStatus(LUser.StatusId);
+                        switch (userStatus.Status)
+                        {
+                            case "Regular":
+                                gridMain.Children.Clear();
+                                GrainSupplier gs = new GrainSupplier(gridMain);
+                                gridMain.Children.Add(gs);
+                                break;
+                            case "Administrator":
+                                gridMain.Children.Clear();
+                                GrainSupplierAdm adm = new GrainSupplierAdm(gridMain);
+                                gridMain.Children.Add(adm);
+                                break;
+                            default:
+                                break;
+                        }
+                        Checklogin = true;
+                    }
+                    else
+                    {
+                        labelWrongPW.Visibility = Visibility.Visible;
+                    }
                 }
             }
             catch (Exception exe)
             {
-
+                
                 throw exe;
             }
+            
 
 
-            switch (userStatus.Status)
-            {
-                case "Regular":
-                    gridMain.Children.Clear();
-                    GrainSupplier gs = new GrainSupplier(gridMain);
-                    gridMain.Children.Add(gs);
-                    break;
-                case "Administrator":
-                    gridMain.Children.Clear();
-                    GrainSupplierAdm adm = new GrainSupplierAdm(gridMain);
-                    gridMain.Children.Add(adm);
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }

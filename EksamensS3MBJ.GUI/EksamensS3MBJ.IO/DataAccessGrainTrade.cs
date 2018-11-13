@@ -18,9 +18,9 @@ namespace EksamensS3MBJ.IO
         {
             LogInUser loginuser = null;
             User user = null;
-            string query = "Select * FROM VerifyUser" +
-                $"Where CPRNR = {userName}" +
-                $"AND Password = {password}";
+            string query = "Select * FROM VerifyUser " +
+                $"Where CPRNR = {userName} " +
+                $"AND Password = {password} ";
             DataSet ds = ExecuteQuery(query);
             foreach (DataRow row in ds.Tables[0].Rows)
             {
@@ -28,12 +28,12 @@ namespace EksamensS3MBJ.IO
             }
             try
             {                
-                string queryUser = "SELECT * FROM User" +
-                                  $"WHERE id = {loginuser.UserId}";
+                string queryUser = "SELECT * FROM User " +
+                                  $"WHERE (id = '{loginuser.UserId}') ";
                 DataSet dats = ExecuteQuery(queryUser);
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    user = new User(row.Field<int>("Id"),row.Field<string>("Name"),row.Field<UserStatus>("StatusId"),row.Field<string>("PhoneNr"),row.Field<Country>("CountryId")); 
+                    user = new User(row.Field<int>("Id"),row.Field<string>("Name"),row.Field<int>("StatusId"),row.Field<string>("PhoneNr"),row.Field<int>("CountryId")); 
                 }
             }
             catch (Exception exe)
@@ -47,7 +47,7 @@ namespace EksamensS3MBJ.IO
         {
             UserStatus us = null;
             string query = "SELECT * FROM UserStatus" +
-                $"WHERE Id = {id}";
+                $"WHERE (Id = '{id}')";
             DataSet ds = ExecuteQuery(query);
             foreach (DataRow row in ds.Tables[0].Rows)
             {

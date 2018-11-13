@@ -23,7 +23,9 @@ namespace EksamensS3MBJ.GUI
         public MainWindow()
         {
             InitializeComponent();
+            MainGrid.Children.Clear();
             LogIn logIn = new LogIn(MainGrid);
+            MainGrid.Children.Add(logIn);
         }
     }
 }

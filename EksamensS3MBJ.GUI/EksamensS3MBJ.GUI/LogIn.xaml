@@ -33,8 +33,7 @@
                  TextWrapping="Wrap"
                  Text=""
                  VerticalAlignment="Top"
-                 Width="262"
-                 TextChanged="user_TextChanged" />
+                 Width="262" />
         <TextBox x:Name="pw" HorizontalAlignment="Left"
                  Height="22"
                  Margin="288,236,0,0"

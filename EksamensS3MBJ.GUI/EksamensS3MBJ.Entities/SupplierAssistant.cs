@@ -13,16 +13,16 @@ namespace EksamensS3MBJ.Entities
         private string mobilnr;
         private string directphone;
         private string directemail;
-        private Supplier supplier;
+        private int supplierid;
 
-        public Supplier _Supplier
+        public int SupplierId
         {
-            get { return supplier; }
+            get { return supplierid; }
             set
             {
-                if (value != supplier)
+                if (value != supplierid)
                 {
-                    supplier = value;
+                    supplierid = value;
                     Notify("supplier");
                 }
 

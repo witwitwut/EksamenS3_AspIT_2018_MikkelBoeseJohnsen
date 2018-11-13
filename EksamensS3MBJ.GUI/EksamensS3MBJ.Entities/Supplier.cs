@@ -10,9 +10,9 @@ namespace EksamensS3MBJ.Entities
     {
         private int id;
         private string name;
-        private Country country;
+        private int countryid;
         private string phonenr;
-        private SupplierStatus status;
+        private int statusid;
         private string email;
         private string zipcity;
 
@@ -44,14 +44,14 @@ namespace EksamensS3MBJ.Entities
         }
 
 
-        public SupplierStatus Status
+        public int StatusId
         {
-            get { return status; }
+            get { return statusid; }
             set
             {
-                if (value != status)
+                if (value != statusid)
                 {
-                    status = value;
+                    statusid = value;
                     Notify("status");
                 }
             }
@@ -72,14 +72,14 @@ namespace EksamensS3MBJ.Entities
         }
 
 
-        public Country _Country
+        public int CountryId
         {
-            get { return country; }
+            get { return countryid; }
             set
             {
-                if (value != country)
+                if (value != countryid)
                 {
-                    country = value;
+                    countryid = value;
                     Notify("country");
                 }
             }
