@@ -19,21 +19,20 @@ namespace EksamensS3MBJ.IO
             LogInUser loginuser = null;
             User user = null;
             string query = "Select * FROM VerifyUser " +
-                $"Where CPRNR = {userName} " +
-                $"AND Password = {password} ";
+                $"Where (CPRNR = '{userName}' AND Password = '{password}') ";
             DataSet ds = ExecuteQuery(query);
             foreach (DataRow row in ds.Tables[0].Rows)
             {
-                loginuser = new LogInUser(row.Field<int>("loginid"), row.Field<string>("CPRNR"), row.Field<string>("Password"), row.Field<int>("UserId"));
+                loginuser = new LogInUser(row.Field<int>("id"), row.Field<string>("CPRNR"), row.Field<string>("Password"), row.Field<int>("UserId"));
             }
             try
             {                
-                string queryUser = "SELECT * FROM User " +
-                                  $"WHERE (id = '{loginuser.UserId}') ";
+                string queryUser = "SELECT * FROM [User] " +
+                                  $"WHERE Id = '{loginuser.UserId}' ";
                 DataSet dats = ExecuteQuery(queryUser);
-                foreach (DataRow row in ds.Tables[0].Rows)
+                foreach (DataRow row in dats.Tables[0].Rows)
                 {
-                    user = new User(row.Field<int>("Id"),row.Field<string>("Name"),row.Field<int>("StatusId"),row.Field<string>("PhoneNr"),row.Field<int>("CountryId")); 
+                    user = new User(row.Field<int>("Id"), row.Field<string>("Name"), row.Field<int>("StatusId"), row.Field<string>("PhoneNr"), row.Field<int>("CountryId")); 
                 }
             }
             catch (Exception exe)
@@ -46,8 +45,8 @@ namespace EksamensS3MBJ.IO
         public UserStatus GetUserStatus(int id)
         {
             UserStatus us = null;
-            string query = "SELECT * FROM UserStatus" +
-                $"WHERE (Id = '{id}')";
+            string query = "SELECT * FROM UserStatus " +
+                $"WHERE Id = '{id}'";
             DataSet ds = ExecuteQuery(query);
             foreach (DataRow row in ds.Tables[0].Rows)
             {

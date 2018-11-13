@@ -8,7 +8,7 @@ namespace EksamensS3MBJ.Entities
 {
     public class User : GrainBarrelNotify
     {
-        private int userid;
+        private int id;
         private string name;
         private int statusid;
         private string phonenr;
@@ -16,27 +16,27 @@ namespace EksamensS3MBJ.Entities
         
         public User()
         {
-            UserId = 0;
+            ID = 0;
         }
 
-        public User(int userId, string name, int statusid, string phoneNr, int countryid)
+        public User(int Id, string name, int statusid, string phoneNr, int countryid)
         {
-            UserId = userId;
+            ID = Id;
             Name = name;
             StatusId = statusid;
             PhoneNr = phoneNr;
             CountryId = countryid;
         }
 
-        public int UserId
+        public int ID
         {
-            get { return userid; }
+            get { return id; }
             set
             {
-                if (value != userid)
+                if (value != id)
                 {
-                    userid = value;
-                    Notify("userid");
+                    id = value;
+                    Notify("id");
                 }
             }
         }

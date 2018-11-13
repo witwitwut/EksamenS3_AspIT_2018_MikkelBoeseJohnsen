@@ -42,7 +42,7 @@ namespace EksamensS3MBJ.GUI
                 {
                     LUser = biz.UseVerifyUser(user.Text, pw.Text);
 
-                    if (LUser.UserId != 0)
+                    if (LUser.ID != 0)
                     {
                         userStatus = biz.UseGetUserStatus(LUser.StatusId);
                         switch (userStatus.Status)
@@ -68,10 +68,9 @@ namespace EksamensS3MBJ.GUI
                     }
                 }
             }
-            catch (Exception exe)
+            catch (Exception)
             {
-                
-                throw exe;
+                throw;
             }
             
 
