@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EksamensS3MBJ.Biz;
 
 namespace EksamensS3MBJ.GUI
 {
@@ -20,11 +21,12 @@ namespace EksamensS3MBJ.GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        ClassBiz MainBiz = new ClassBiz();
         public MainWindow()
         {
             InitializeComponent();
             MainGrid.Children.Clear();
-            LogIn logIn = new LogIn(MainGrid);
+            LogIn logIn = new LogIn(MainGrid, MainBiz);
             MainGrid.Children.Add(logIn);
         }
     }

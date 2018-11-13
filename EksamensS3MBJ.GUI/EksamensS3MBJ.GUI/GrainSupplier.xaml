@@ -13,6 +13,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <ListView HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding cb.suppliers}"
                   Margin="10,45,10,10"
                   VerticalAlignment="Stretch">
             <ListView.View>
@@ -23,7 +24,8 @@
             </ListView.View>
         </ListView>
 
-        <GroupBox Header="Grain Supplier"
+        <GroupBox x:Name="gbxGrainSupplier"
+                  Header="Grain Supplier"
                   HorizontalAlignment="Left"
                   Height="231"
                   Margin="296,35,0,0"
@@ -93,14 +95,15 @@
                        Width="111"
                        Grid.Column="0"
                        Grid.Row="5" />
-                <TextBox HorizontalAlignment="Stretch"
+                <TextBox HorizontalAlignment="Stretch" 
                          Margin="10,6,10,6"
                          TextWrapping="Wrap"
-                         Text="TextBox"
                          IsReadOnly="True"
                          VerticalAlignment="Stretch"
                          Grid.Column="1"
-                         Grid.Row="0" />
+                         Grid.Row="0">
+                    
+                </TextBox>
                 <TextBox HorizontalAlignment="Stretch"
                          Margin="10,6,10,6"
                          TextWrapping="Wrap"
@@ -143,7 +146,8 @@
                          Grid.Row="5" />
             </Grid>
         </GroupBox>
-        <GroupBox Header="Supplier Sales Assistant"
+        <GroupBox x:Name="gbxSalesAssistant"
+                  Header="Supplier Sales Assistant"
                   HorizontalAlignment="Left"
                   Height="168"
                   Margin="296,271,0,0"

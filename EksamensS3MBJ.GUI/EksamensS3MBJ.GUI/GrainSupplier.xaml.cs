@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using EksamensS3MBJ.Biz;
 
 namespace EksamensS3MBJ.GUI
 {
@@ -21,10 +22,14 @@ namespace EksamensS3MBJ.GUI
     public partial class GrainSupplier : UserControl
     {
         Grid gridMain;
-        public GrainSupplier(Grid grid)
+        ClassBiz cb;
+        public GrainSupplier(Grid grid, ClassBiz inbiz)
         {
             InitializeComponent();
             gridMain = grid;
+            cb = inbiz;
+            cb.UseGetAllSuppliers();
+            gbxGrainSupplier.DataContext = cb;
         }
     }
 }

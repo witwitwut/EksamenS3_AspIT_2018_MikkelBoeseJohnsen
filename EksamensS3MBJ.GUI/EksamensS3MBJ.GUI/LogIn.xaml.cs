@@ -23,23 +23,24 @@ namespace EksamensS3MBJ.GUI
     public partial class LogIn : UserControl
     {
         Grid gridMain;
-        public LogIn(Grid grid)
+        ClassBiz biz = new ClassBiz();
+        public LogIn(Grid grid, ClassBiz Inbiz)
         {
             InitializeComponent();
             gridMain = grid;
+            biz = Inbiz;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ClassBiz biz = new ClassBiz();
             User LUser = new User();
             UserStatus userStatus = new UserStatus();
-            bool Checklogin = false;
+            //bool Checklogin = false;
             try
             {
                 labelWrongPW.Visibility = Visibility.Hidden;
-                while (Checklogin == false)
-                {
+                //while (Checklogin == false)
+                //{
                     LUser = biz.UseVerifyUser(user.Text, pw.Text);
 
                     if (LUser.ID != 0)
@@ -49,7 +50,7 @@ namespace EksamensS3MBJ.GUI
                         {
                             case "Regular":
                                 gridMain.Children.Clear();
-                                GrainSupplier gs = new GrainSupplier(gridMain);
+                                GrainSupplier gs = new GrainSupplier(gridMain, biz);
                                 gridMain.Children.Add(gs);
                                 break;
                             case "Administrator":
@@ -60,17 +61,18 @@ namespace EksamensS3MBJ.GUI
                             default:
                                 break;
                         }
-                        Checklogin = true;
+                        //Checklogin = true;
                     }
                     else
                     {
                         labelWrongPW.Visibility = Visibility.Visible;
+                        //Checklogin = true;
                     }
-                }
+                //}
             }
-            catch (Exception)
+            catch (Exception exe)
             {
-                throw;
+                throw exe;
             }
             
 

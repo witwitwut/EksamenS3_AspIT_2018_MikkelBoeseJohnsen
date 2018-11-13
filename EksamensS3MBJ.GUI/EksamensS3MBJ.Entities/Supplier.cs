@@ -16,6 +16,28 @@ namespace EksamensS3MBJ.Entities
         private string email;
         private string zipcity;
 
+        public Supplier()
+        {
+            ZipCity = "";
+            Email = "";
+            StatusId = 0;
+            PhoneNr = "";
+            CountryId = 0;
+            Name = "";
+            Id = 0;
+        }
+
+        public Supplier(string zipCity, string email, int statusId, string phoneNr, int countryId, string name, int id)
+        {
+            ZipCity = zipCity;
+            Email = email;
+            StatusId = statusId;
+            PhoneNr = phoneNr;
+            CountryId = countryId;
+            Name = name;
+            Id = id;
+        }
+
         public string ZipCity
         {
             get { return zipcity; }
